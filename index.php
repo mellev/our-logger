@@ -32,8 +32,9 @@ $logger->addLogger(new Logger\FileLogger([
  
 //обработчик который ничего не делает
 $logger->addLogger(new Logger\NullLogger([
-    
+
 ]));
+
 $logger->log(Log\LogLevel::ERROR, 'Error message');
 $logger->error('Error message');
  
