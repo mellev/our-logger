@@ -14,22 +14,22 @@
  *
  * application.log
  * *****************
- * 2016-05-30T09:50:57+00:00  ELVL  Error message
- * 2016-05-30T09:50:57+00:00  ELVL  Error message
- * 2016-05-30T09:50:57+00:00  ILVL  Info message
- * 2016-05-30T09:50:57+00:00  ILVL  Info message
+ * 2016-05-30T09:50:57+00:00  LOGLEVELERR  Error message
+ * 2016-05-30T09:50:57+00:00  LOGLEVELERR  Error message
+ * 2016-05-30T09:50:57+00:00  LOGLEVELINF  Info message
+ * 2016-05-30T09:50:57+00:00  LOGLEVELINF  Info message
  * *****************
  *
  * application.error.log
  * *****************
- * 2016-05-30T09:50:57+00:00  ELVL  Error message
- * 2016-05-30T09:50:57+00:00  ELVL  Error message
+ * 2016-05-30T09:50:57+00:00  LOGLEVELERR  Error message
+ * 2016-05-30T09:50:57+00:00  LOGLEVELERR  Error message
  * *****************
  *
  * application.info.log
  * *****************
- * 2016-05-30T09:50:57+00:00  ILVL  Info message
- * 2016-05-30T09:50:57+00:00  ILVL  Info message
+ * 2016-05-30T09:50:57+00:00  LOGLEVELINF  Info message
+ * 2016-05-30T09:50:57+00:00  LOGLEVELINF  Info message
  * *****************
  */
 
