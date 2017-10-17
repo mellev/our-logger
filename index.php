@@ -53,14 +53,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $logger = new OurLogger\Component();
  
 /**
- * Обработчик который все логи будет писать в файл application.log
+ * Логгер который все логи будет писать в файл application.log
  */
 $logger->addLogger(new OurLogger\FileLogger([
    'filename' => __DIR__ . '/application.log',
 ]));
  
 /**
- * Обработчик который все ошибки будет писать в файл application.error.log
+ * Логгер который все ошибки будет писать в файл application.error.log
  */
 $logger->addLogger(new OurLogger\FileLogger([
    'filename'  => __DIR__ . '/application.error.log',
@@ -70,7 +70,7 @@ $logger->addLogger(new OurLogger\FileLogger([
 ]));
  
 /**
- * Обработчик который все информационные логи будет писать в файл application.info.log
+ * Логгер который все информационные логи будет писать в файл application.info.log
  */
 $logger->addLogger(new OurLogger\FileLogger([
    'filename'  => __DIR__ . '/application.info.log',
@@ -80,7 +80,7 @@ $logger->addLogger(new OurLogger\FileLogger([
 ]));
  
 /**
- * Обработчик который все debug логи записывает в syslog
+ * Логгер который все debug логи записывает в syslog
  *
  * @see http://php.net/manual/ru/function.syslog.php
  */
@@ -91,7 +91,7 @@ $logger->addLogger(new OurLogger\SyslogLogger([
 ]));
  
 /**
- * Обработчик который ничего не делает
+ * Логгер который ничего не делает
  */
 $logger->addLogger(new OurLogger\NullLogger([
  
