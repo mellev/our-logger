@@ -16,6 +16,10 @@
  * 2016-05-30T09:50:57+00:00  LOG_LEVEL_ERROR  Error message
  * 2016-05-30T09:50:57+00:00  LOG_LEVEL_INFO  Info message
  * 2016-05-30T09:50:57+00:00  LOG_LEVEL_INFO  Info message
+ * 2016-05-30T09:50:57+00:00  LOG_LEVEL_DEBUG  Debug message
+ * 2016-05-30T09:50:57+00:00  LOG_LEVEL_DEBUG  Debug message
+ * 2016-05-30T09:50:57+00:00  LOG_LEVEL_NOTICE  Notice message
+ * 2016-05-30T09:50:57+00:00  LOG_LEVEL_NOTICE  Notice message
  * *****************
  *
  * application.error.log
@@ -88,3 +92,9 @@ $logger->error('Error message');
  
 $logger->log(OurLogger\LogLevel::INFO, 'Info message');
 $logger->info('Info message');
+
+$logger->log(OurLogger\LogLevel::DEBUG, 'Debug message');
+$logger->debug('Debug message');
+
+$logger->log(OurLogger\LogLevel::NOTICE, 'Notice message');
+$logger->notice('Notice message');
