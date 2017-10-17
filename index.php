@@ -20,6 +20,8 @@
  * 2016-05-30T09:50:57+00:00  LOG_LEVEL_DEBUG  Debug message
  * 2016-05-30T09:50:57+00:00  LOG_LEVEL_NOTICE  Notice message
  * 2016-05-30T09:50:57+00:00  LOG_LEVEL_NOTICE  Notice message
+ * 2016-05-30T09:50:57+00:00  LOG_LEVEL_INFO  Info message from FileLogger
+ * 2016-05-30T09:50:57+00:00  LOG_LEVEL_INFO  Info message from FileLogger
  * *****************
  *
  * application.error.log
@@ -55,9 +57,11 @@ $logger = new OurLogger\Component();
 /**
  * Логгер который все логи будет писать в файл application.log
  */
-$logger->addLogger(new OurLogger\FileLogger([
+$fileLogger = new OurLogger\FileLogger([
    'filename' => __DIR__ . '/application.log',
-]));
+]);
+
+$logger->addLogger($fileLogger);
  
 /**
  * Логгер который все ошибки будет писать в файл application.error.log
@@ -108,3 +112,6 @@ $logger->debug('Debug message');
 
 $logger->log(OurLogger\LogLevel::NOTICE, 'Notice message');
 $logger->notice('Notice message');
+
+$fileLogger->log(OurLogger\LogLevel::INFO, 'Info message from FileLogger');
+$fileLogger->info('Info message from FileLogger');
