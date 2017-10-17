@@ -30,6 +30,9 @@
  * 2016-05-30T09:50:57+00:00  LOG_LEVEL_INFO  Info message
  * *****************
  */
+
+require_once(__DIR__ . '/vendor/autoload.php');
+
 /**
  * Компонент для логирования
  */
