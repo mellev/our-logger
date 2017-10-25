@@ -41,16 +41,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 /**
  * Компонент для логирования
- *
- * Доступные уровни логирования:
- * - EMERGENCY
- * - ALERT
- * - CRITICAL
- * - ERROR
- * - WARNING
- * - NOTICE
- * - INFO
- * - DEBUG
  */
 $logger = new OurLogger\Component();
  
