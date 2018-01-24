@@ -3,7 +3,7 @@
 namespace OurLogger;
 
 /**
- * Интерфейс абстрактного логгера
+ * Интерфейс логгера
  *
  * Interface LoggerInterface
  * @package OurLogger

@@ -10,11 +10,11 @@ namespace OurLogger;
  */
 class LogLevel
 {
-    const ERROR = 'ERROR';
+    const ERROR = 'LOG_LEVEL_ERROR';
 
-    const INFO = 'INFO';
+    const INFO = 'LOG_LEVEL_INFO';
 
-    const DEBUG = 'DEBUG';
+    const DEBUG = 'LOG_LEVEL_DEBUG';
 
-    const NOTICE = 'NOTICE';
+    const NOTICE = 'LOG_LEVEL_NOTICE';
 }

@@ -8,8 +8,17 @@ namespace OurLogger;
  * Class Component
  * @package OurLogger
  */
-class Component implements LoggerInterface
+class Component
 {
+    use LoggerTrait;
+
+    /**
+     * Массив зарегистрированных логгеров
+     *
+     * @var LoggerInterface[]
+     */
+    protected $loggers = [];
+
     /**
      * Добавление логгера в обработчики логирования
      *
@@ -17,7 +26,7 @@ class Component implements LoggerInterface
      */
     public function addLogger(LoggerInterface $logger)
     {
-
+        $this->loggers[] = $logger;
     }
 
     /**
@@ -29,50 +38,8 @@ class Component implements LoggerInterface
      */
     public function log($level, $message)
     {
-
-    }
-
-    /**
-     * Логирование условий ошибки
-     *
-     * @param string $message
-     * @return void
-     */
-    public function error($message)
-    {
-
-    }
-
-    /**
-     * Логирование информационных сообщений
-     *
-     * @param string $message
-     * @return void
-     */
-    public function info($message)
-    {
-
-    }
-
-    /**
-     * Логирование сообщений отладки
-     *
-     * @param string $message
-     * @return void
-     */
-    public function debug($message)
-    {
-
-    }
-
-    /**
-     * Логирование нормальных условий
-     *
-     * @param string $message
-     * @return void
-     */
-    public function notice($message)
-    {
-
+        foreach ($this->loggers as $logger) {
+            $logger->log($level, $message);
+        }
     }
 }

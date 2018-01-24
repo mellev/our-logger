@@ -8,18 +8,36 @@ namespace OurLogger;
  * Class SyslogLogger
  * @package OurLogger
  */
-class SyslogLogger implements LoggerInterface
+class SyslogLogger extends AbstractLogger
 {
+    /**
+     * Сопоставление констант уровней логирования из компонента с
+     * константами c которыми работает syslog
+     *
+     * @var array
+     */
+    protected $priorityMap = [
+        LogLevel::NOTICE => LOG_NOTICE,
+        LogLevel::DEBUG => LOG_DEBUG,
+        LogLevel::ERROR => LOG_ERR,
+        LogLevel::INFO => LOG_INFO
+    ];
+
     /**
      * Описание передаваемых опций
      * $definition
-     *      ['levels']      array (optional) Массив с уровнями логов, которые должен записывать логгер. Если уровни не перечислены, тогда будут записываться все логи.
+     *      ['levels']      array (optional) Массив с уровнями логов, которые должен
+     *                      записывать логгер. Если уровни не перечислены, тогда будут
+     *                      записываться все логи.
      *
      * FileLogger constructor.
      * @param array $definition
      */
     public function __construct(array $definition)
     {
+        parent::__construct($definition);
+
+        openlog('application', LOG_ODELAY, LOG_USER);
     }
 
     /**
@@ -31,45 +49,6 @@ class SyslogLogger implements LoggerInterface
      */
     public function log($level, $message)
     {
-    }
-
-    /**
-     * Логирование условий ошибки
-     *
-     * @param string $message
-     * @return void
-     */
-    public function error($message)
-    {
-    }
-
-    /**
-     * Логирование информационных сообщений
-     *
-     * @param string $message
-     * @return void
-     */
-    public function info($message)
-    {
-    }
-
-    /**
-     * Логирование сообщений отладки
-     *
-     * @param string $message
-     * @return void
-     */
-    public function debug($message)
-    {
-    }
-
-    /**
-     * Логирование нормальных условий
-     *
-     * @param string $message
-     * @return void
-     */
-    public function notice($message)
-    {
+        syslog($this->priorityMap[$level], $this->messageToString($message));
     }
 }
